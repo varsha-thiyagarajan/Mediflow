@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediFlow - Tracking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+
+  <div class="nav-logo">
+    <div class="nav-logo-icon">⚕️</div>
+    Medi<span>Flow</span>
+  </div>
+
+  <div class="nav-tabs" id="navTabs">
+
+    <button class="nav-tab" onclick="showPage('reception')">
+      🏥 Reception
+    </button>
+
+    <button class="nav-tab" onclick="showPage('doctor')">
+      👨‍⚕️ Doctor
+    </button>
+
+    <button class="nav-tab" onclick="showPage('lab')">
+      🔬 Lab
+    </button>
+
+    <button class="nav-tab" onclick="showPage('medical')">
+      💊 Medical
+    </button>
+
+    <button class="nav-tab active" onclick="showPage('tracking')">
+      📡 Tracking
+    </button>
+
+  </div>
+
+  <div class="nav-right">
+    <div class="user-badge">
+      <div class="live-dot"></div>
+      <span id="userBadge">TRACKING</span>
+    </div>
+
+    <button class="logout-btn" onclick="doLogout()">
+      ↩ Logout
+    </button>
+  </div>
+
+</nav>
+
+<!-- ================= TRACKING PAGE ================= -->
+<div class="page active" id="page-tracking">
+
+  <!-- HEADER -->
+  <div class="page-header">
+
+    <div class="breadcrumb">
+      <span>MediFlow</span> › <span>Tracking</span>
+    </div>
+
+    <h2>Live <span>Tracking</span></h2>
+
+    <p>
+      Real-time patient updates and monitoring.
+    </p>
+
+  </div>
+
+  <!-- ================= STATS (KEEPED) ================= -->
+  <div class="stats-row" id="trackingStats">
+
+    <div class="stat-card c1">
+      <div class="stat-num" id="tr-total">0</div>
+      <div class="stat-label">Total Today</div>
+    </div>
+
+    <div class="stat-card c2">
+      <div class="stat-num" id="tr-active">0</div>
+      <div class="stat-label">Active Cases</div>
+    </div>
+
+    <div class="stat-card c3">
+      <div class="stat-num" id="tr-lab">0</div>
+      <div class="stat-label">In Lab</div>
+    </div>
+
+    <div class="stat-card c4">
+      <div class="stat-num" id="tr-complete">0</div>
+      <div class="stat-label">Completed</div>
+    </div>
+
+  </div>
+
+  <!-- ================= PATIENT CARDS ================= -->
+  <div class="cards-grid" id="timelineContainer"></div>
+
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="script.js"></script>
+<script src="tracking.js"></script>
+
+</body>
+</html>

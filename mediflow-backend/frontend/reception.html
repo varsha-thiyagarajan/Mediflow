@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-icon">⚕️</div>
+      Medi<span>Flow</span>
+    </div>
+    <div class="nav-tabs" id="navTabs">
+      <button class="nav-tab active" onclick="showPage('reception')" data-page="reception">
+        <span class="tab-icon">🏥</span>Reception
+      </button>
+      <button class="nav-tab" onclick="showPage('doctor')" data-page="doctor">
+        <span class="tab-icon">👨‍⚕️</span>Doctor
+      </button>
+      <button class="nav-tab" onclick="showPage('lab')" data-page="lab">
+        <span class="tab-icon">🔬</span>Lab
+      </button>
+      <button class="nav-tab" onclick="showPage('medical')" data-page="medical">
+        <span class="tab-icon">💊</span>Medical
+      </button>
+      <button class="nav-tab" onclick="showPage('tracking')" data-page="tracking">
+        <span class="tab-icon">📡</span>Tracking
+      </button>
+    </div>
+    <div class="nav-right">
+      <div class="user-badge">
+        <div class="live-dot"></div>
+        <span id="userBadge">RECEPTION</span>
+      </div>
+      <button class="logout-btn" onclick="doLogout()">↩ Logout</button>
+    </div>
+  </nav>
+    <div class="page active" id="page-reception">
+    <div class="page-header">
+      <div class="breadcrumb"><span>MediFlow</span><span>›</span><span>Reception</span></div>
+      <h2>Patient <span>Intake</span></h2>
+      <p>Register and triage incoming patients with AI-assisted priority scoring.</p>
+    </div>
+
+    <div class="stats-row" id="receptionStats">
+      <div class="stat-card c1"><div class="stat-num" id="st-total">0</div><div class="stat-label">Total Patients</div></div>
+      <div class="stat-card c2"><div class="stat-num" id="st-waiting">0</div><div class="stat-label">Awaiting Doctor</div></div>
+      <div class="stat-card c3"><div class="stat-num" id="st-critical">0</div><div class="stat-label">Critical Cases</div></div>
+      <div class="stat-card c4"><div class="stat-num" id="st-done">0</div><div class="stat-label">Discharged Today</div></div>
+    </div>
+
+    <div class="form-card">
+      <h3 style="font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:24px;">
+        🆕 New Patient Registration
+      </h3>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Patient Name</label>
+          <input class="form-input" type="text" id="f-name" placeholder="Full name...">
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input class="form-input" type="number" id="f-age" placeholder="Years..." min="0" max="150">
+        </div>
+        <div class="form-group full">
+          <label>Symptoms</label>
+          <textarea class="form-textarea" id="f-symptoms" placeholder="Describe symptoms in detail..."></textarea>
+          <div class="ai-suggestion" id="aiSuggestion" style="display:none;">
+            <span>🤖</span><span id="aiSuggestionText"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Priority Level</label>
+          <select class="form-select" id="f-priority">
+            <option value="">— Select Priority —</option>
+            <option value="Critical">🔴 Critical</option>
+            <option value="High">🟠 High</option>
+            <option value="Medium">🔵 Medium</option>
+            <option value="Low">🟢 Low</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Assigned Doctor</label>
+          <select class="form-select" id="f-doctor">
+            <option value="Dr. Sharma">Dr. Sharma (General)</option>
+            <option value="Dr. Patel">Dr. Patel (Cardiology)</option>
+            <option value="Dr. Rao">Dr. Rao (Neuro)</option>
+            <option value="Dr. Singh">Dr. Singh (Ortho)</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <button class="submit-btn" onclick="submitPatient()">⚡ Register Patient & Triage</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ <script src="script.js"></script>
+</body>
+</html>

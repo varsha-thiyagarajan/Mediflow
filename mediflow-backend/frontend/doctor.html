@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor Console</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">⚕️</div>
+    Medi<span>Flow</span>
+  </div>
+
+  <div class="nav-tabs" id="navTabs">
+    <button class="nav-tab" onclick="showPage('reception')">
+      🏥 Reception
+    </button>
+
+    <button class="nav-tab active" onclick="showPage('doctor')">
+      👨‍⚕️ Doctor
+    </button>
+
+    <button class="nav-tab" onclick="showPage('lab')">
+      🔬 Lab
+    </button>
+
+    <button class="nav-tab" onclick="showPage('medical')">
+      💊 Medical
+    </button>
+
+    <button class="nav-tab" onclick="showPage('tracking')">
+      📡 Tracking
+    </button>
+  </div>
+
+  <div class="nav-right">
+    <div class="user-badge">
+      <div class="live-dot"></div>
+      <span id="userBadge">DOCTOR</span>
+    </div>
+
+    <button class="logout-btn" onclick="doLogout()">↩ Logout</button>
+  </div>
+</nav>
+
+<!-- ================= PAGE ================= -->
+<div class="page active" id="page-doctor">
+
+  <div class="page-header">
+    <div class="breadcrumb">
+      <span>MediFlow</span> › <span>Doctor</span>
+    </div>
+
+    <h2>Doctor <span>Console</span></h2>
+    <p>Review patient cases, add notes, and manage prescriptions.</p>
+  </div>
+
+  <!-- ================= TOOLBAR ================= -->
+  <div class="toolbar">
+
+    <div class="search-box">
+      <span>🔍</span>
+      <input
+        type="text"
+        id="doctorSearch"
+        placeholder="Search patients..."
+        oninput="renderDoctorCards()"
+      >
+    </div>
+
+    <button class="filter-btn active"
+      onclick="setDoctorFilter('all',this)">
+      All
+    </button>
+
+    <button class="filter-btn"
+      onclick="setDoctorFilter('Critical',this)">
+      🔴 Critical
+    </button>
+
+    <button class="filter-btn"
+      onclick="setDoctorFilter('High',this)">
+      🟠 High
+    </button>
+
+    <button class="filter-btn"
+      onclick="setDoctorFilter('Medium',this)">
+      🔵 Medium
+    </button>
+
+  </div>
+
+  <!-- ================= PATIENT CARDS ================= -->
+  <div class="cards-grid" id="doctorCards"></div>
+
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="script.js"></script>
+<script src="doctor.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab test</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-icon">⚕️</div>
+      Medi<span>Flow</span>
+    </div>
+    <div class="nav-tabs" id="navTabs">
+      <button class="nav-tab active" onclick="showPage('reception')" data-page="reception">
+        <span class="tab-icon">🏥</span>Reception
+      </button>
+      <button class="nav-tab" onclick="showPage('doctor')" data-page="doctor">
+        <span class="tab-icon">👨‍⚕️</span>Doctor
+      </button>
+      <button class="nav-tab" onclick="showPage('lab')" data-page="lab">
+        <span class="tab-icon">🔬</span>Lab
+      </button>
+      <button class="nav-tab" onclick="showPage('medical')" data-page="medical">
+        <span class="tab-icon">💊</span>Medical
+      </button>
+      <button class="nav-tab" onclick="showPage('tracking')" data-page="tracking">
+        <span class="tab-icon">📡</span>Tracking
+      </button>
+    </div>
+    <div class="nav-right">
+      <div class="user-badge">
+        <div class="live-dot"></div>
+        <span id="userBadge">RECEPTION</span>
+      </div>
+      <button class="logout-btn" onclick="doLogout()">↩ Logout</button>
+    </div>
+  </nav>
+    <div class="page active" id="page-lab">
+    <div class="page-header">
+      <div class="breadcrumb"><span>MediFlow</span>›<span>Lab</span></div>
+      <h2>Lab <span>Results</span></h2>
+      <p>Process test requests and submit diagnostic results.</p>
+    </div>
+    <div class="cards-grid" id="labCards"></div>
+  </div>
+  <script src="script.js"></script>
+<script src="lab.js"></script>
+</body>
+</html>

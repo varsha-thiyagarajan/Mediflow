@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediFlow</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="loginScreen">
+    <div class="login-container">
+
+      <div class="login-logo">
+        <div class="login-logo-icon">⚕️</div>
+        <div>
+          <h1>Medi<span>Flow</span></h1>
+          <p>INTELLIGENT HOSPITAL OPERATING SYSTEM</p>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom:24px;">
+        <div class="login-label">Select Your Role</div>
+
+        <div class="role-grid">
+          <div class="role-btn active" data-role="reception" onclick="selectRole(this)">
+            <span class="role-icon">🏥</span>Reception
+          </div>
+
+          <div class="role-btn" data-role="doctor" onclick="selectRole(this)">
+            <span class="role-icon">👨‍⚕️</span>Doctor
+          </div>
+
+          <div class="role-btn" data-role="lab" onclick="selectRole(this)">
+            <span class="role-icon">🔬</span>Lab
+          </div>
+
+          <div class="role-btn" data-role="medical" onclick="selectRole(this)">
+            <span class="role-icon">💊</span>Medical
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom:16px;">
+        <div class="login-label">Username</div>
+        <input class="login-field" type="text" id="loginUser" placeholder="Enter username..." value="admin">
+      </div>
+
+      <div class="form-group" style="margin-bottom:28px;">
+        <div class="login-label">Password</div>
+        <input class="login-field" type="password" id="loginPass" placeholder="••••••••" value="password">
+      </div>
+
+      <button class="login-btn" onclick="doLogin()">⚡ Access System</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
