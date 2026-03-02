@@ -142,7 +142,7 @@ MediFlow/
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/mediflow.git
+git clone https://github.com/varsha-thiyagarajan/Mediflow.git
 cd mediflow
 ```
 
