@@ -4,6 +4,17 @@
 
 let patients = [];
 
+/* SAFE ROLE CHECK */
+const role =
+  (localStorage.getItem("role") || "")
+  .trim()
+  .toLowerCase();
+
+console.log("ROLE:", role);
+
+if (role !== "lab" && role !== "admin") {
+  location = "login.html";
+}
 /* =========================================
    LOAD LAB PATIENTS
 ========================================= */

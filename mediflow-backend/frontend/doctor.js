@@ -7,7 +7,16 @@ let doctorFilter = "all";
 
 /* TEMP LOGIN DOCTOR */
 const CURRENT_DOCTOR = "Dr. Sharma";
+const role =
+  (localStorage.getItem("role") || "")
+  .trim()
+  .toLowerCase();
 
+console.log("ROLE:", role);
+
+if (role !== "doctor" && role !== "admin") {
+  location = "login.html";
+}
 /* =====================================
    LOAD PATIENTS
 ===================================== */

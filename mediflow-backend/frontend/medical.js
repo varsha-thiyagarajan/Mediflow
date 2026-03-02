@@ -3,7 +3,20 @@
 ========================================= */
 
 let patients = [];
+/* =====================================
+   ROLE PROTECTION
+===================================== */
 
+const role =
+  (localStorage.getItem("role") || "")
+  .trim()
+  .toLowerCase();
+
+console.log("ROLE:", role);
+
+if (role !== "medical" && role !== "admin") {
+  location = "login.html";
+}
 /* =========================================
    LOAD MEDICAL PATIENTS
 ========================================= */

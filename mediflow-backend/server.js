@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 
 const express = require("express");
@@ -19,7 +20,10 @@ app.get("/", (req, res) => {
   res.send("MediFlow Backend Running");
 });
 app.use("/patients", patientRoutes);
+const userRoutes =
+  require("./routes/UserRoutes");
 
+app.use("/auth", userRoutes);
 app.listen(5000, () => {
   console.log("Server running on port 5000");
 });
